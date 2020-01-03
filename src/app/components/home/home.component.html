@@ -1,7 +1,20 @@
-<div class="container">
+<div class="container mt-3">
   <div class="row">
     <div class="col-lg-12">
-      Home component!
+      <form [formGroup]="yemekFormu">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Yemek adı</label>
+          <input type="text" class="form-control" formControlName="yemekAdi" placeholder="Yemek adı giriniz.">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="kaydet()" ><i class="fas fa-save"></i> Kaydet</button>
+      </form>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-lg-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let yemek of yemekler">{{ yemek }}</li>
+      </ul>
     </div>
   </div>
 </div>
